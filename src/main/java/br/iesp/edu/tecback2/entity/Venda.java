@@ -1,11 +1,10 @@
 package br.iesp.edu.tecback2.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -15,8 +14,16 @@ public class Venda {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Double valorTotal;
-    private Produto produto;
+
+    @OneToMany
+    private List<Produto> produtos;
+
+    @OneToOne
     private Cliente cliente;
+
+    @OneToOne
     private FormaPagamento formaPagamento;
+
+    @OneToOne
     private Funcionario funcionario;
 }
