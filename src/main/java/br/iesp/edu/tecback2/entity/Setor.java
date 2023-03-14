@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,5 +14,11 @@ import lombok.Setter;
 public class Setor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
+
+    @NotEmpty(message="Campo nome é obrigatório.")
+    private String nome;
+
+    @NotEmpty(message="Campo descricao é obrigatório.")
+    private String descricao;
 }
