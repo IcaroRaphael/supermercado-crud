@@ -1,13 +1,13 @@
-package br.iesp.edu.tecback3;
+package com.iesp.tecback;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Tecback3ApplicationTests {
+class TecbackApiApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
