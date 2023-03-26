@@ -1,0 +1,84 @@
+package com.iesp.tecback.resource;
+
+import com.iesp.tecback.entity.Cliente;
+import com.iesp.tecback.repository.ClienteRepository;
+import com.iesp.tecback.service.ClienteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/cliente")
+public class ClienteResource {
+
+	@Autowired
+	private ClienteService service;
+
+	@Autowired
+	private ClienteRepository repository;
+
+	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<Cliente> save(@RequestBody Cliente c) {
+		Cliente cliente = service.save(c);
+		return ResponseEntity.status(201).body(cliente);
+	}
+
+	@PutMapping
+	@ResponseStatus(HttpStatus.CREATED)
+	public ResponseEntity<Cliente> update(@RequestBody Cliente c) {
+		Cliente cliente = service.save(c);
+		return ResponseEntity.status(201).body(cliente);
+	}
+
+	@GetMapping
+	@ResponseStatus(HttpStatus.OK)
+	public List<Cliente> findAll() {
+		return service.findAll();
+	}
+
+	@GetMapping("/{id}")
+	@ResponseStatus(HttpStatus.OK)
+	public Optional<Cliente> findById(@PathVariable Long id) {
+		return service.findById(id);
+	}
+
+	@DeleteMapping("/{id}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@PathVariable Long id) {
+		service.deleteById(id);
+	}
+
+	@DeleteMapping
+	@ResponseStatus(HttpStatus.NO_CONTENT)
+	public void delete(@RequestBody Cliente c) {
+		service.delete(c);
+	}
+
+	//----------------------------------------------------------------------
+	@GetMapping("/search/{nome}")
+	public List<Cliente> buscaPorNome(@PathVariable String nome){
+	    return repository.findByNomeContainingIgnoreCase(nome);
+	}
+	
+	/*@GetMapping("/rua/{nome}")
+	public List<Cliente> buscaPorRua(@PathVariable String nome){
+		return repository.findByNomeRuaContaining(nome);
+	}*/
+
+	@GetMapping("/lista/{cpf}")
+    public List<Cliente> buscarClientesPorCpf(@PathVariable String cpf) {
+        return repository.findByCpf(cpf);
+    }
+	
+	@GetMapping("/listatelefone/{clienteTelefone}")
+    public List<Cliente> buscarClientesPorTelefone(@PathVariable String clienteTelefone) {
+        return repository.findByTelefone(clienteTelefone);
+    }
+
+    
+}

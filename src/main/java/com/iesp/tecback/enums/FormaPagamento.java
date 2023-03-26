@@ -1,8 +1,8 @@
 package com.iesp.tecback.enums;
 
 public enum FormaPagamento {
-
-	CARTÃO,PIX,DINHEIRO
-	
-	
+	CARTAO_DEBITO,
+	CARTAO_CREDITO,
+	DINHEIRO,
+	PIX;
 }
