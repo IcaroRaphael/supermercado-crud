@@ -38,6 +38,10 @@ public class ProdutoService {
         return repository.findById(id);
     }
 
+    public List<Produto> findByNome(String nome){
+        return repository.findByNome(nome);
+    }
+
     public void delete(Produto produto){
         if(produto.getId() == null){
             throw new RuntimeException("Objeto inexistente.");

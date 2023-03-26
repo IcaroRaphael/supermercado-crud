@@ -38,6 +38,18 @@ public class ClienteService {
         return repository.findById(id);
     }
 
+    public List<Cliente> findByNome(String nome){
+        return repository.findByNome(nome);
+    }
+
+    public List<Cliente> findByFirstNome(String nome){
+        return repository.findByFirstNome(nome);
+    }
+
+    public List<Cliente> findByCpf(String cpf){
+        return repository.findByCpf(cpf);
+    }
+
     public void delete(Cliente cliente){
         if(cliente.getId() == null){
             throw new RuntimeException("Objeto inexistente.");

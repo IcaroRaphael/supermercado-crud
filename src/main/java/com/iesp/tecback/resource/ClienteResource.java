@@ -1,7 +1,6 @@
 package com.iesp.tecback.resource;
 
 import com.iesp.tecback.entity.Cliente;
-import com.iesp.tecback.repository.ClienteRepository;
 import com.iesp.tecback.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,9 +16,6 @@ public class ClienteResource {
 
 	@Autowired
 	private ClienteService service;
-
-	@Autowired
-	private ClienteRepository repository;
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
@@ -47,9 +43,27 @@ public class ClienteResource {
 		return service.findById(id);
 	}
 
+	@GetMapping("/nome/{nome}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Cliente> findByNome(@PathVariable String nome){
+		return service.findByNome(nome);
+	}
+
+	@GetMapping("/primeiroNome/{nome}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Cliente> findByFirstNome(@PathVariable String nome){
+		return service.findByFirstNome(nome);
+	}
+
+	@GetMapping("/cpf/{cpf}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Cliente> findByCpf(@PathVariable String cpf){
+		return service.findByCpf(cpf);
+	}
+
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void delete(@PathVariable Long id) {
+	public void deleteById(@PathVariable Long id) {
 		service.deleteById(id);
 	}
 
@@ -60,15 +74,15 @@ public class ClienteResource {
 	}
 
 	//----------------------------------------------------------------------
-	@GetMapping("/search/{nome}")
+	/*@GetMapping("/search/{nome}")
 	public List<Cliente> buscaPorNome(@PathVariable String nome){
 	    return repository.findByNomeContainingIgnoreCase(nome);
 	}
 	
-	/*@GetMapping("/rua/{nome}")
+	@GetMapping("/rua/{nome}")
 	public List<Cliente> buscaPorRua(@PathVariable String nome){
 		return repository.findByNomeRuaContaining(nome);
-	}*/
+	}
 
 	@GetMapping("/lista/{cpf}")
     public List<Cliente> buscarClientesPorCpf(@PathVariable String cpf) {
@@ -78,7 +92,6 @@ public class ClienteResource {
 	@GetMapping("/listatelefone/{clienteTelefone}")
     public List<Cliente> buscarClientesPorTelefone(@PathVariable String clienteTelefone) {
         return repository.findByTelefone(clienteTelefone);
-    }
+    }*/
 
-    
 }

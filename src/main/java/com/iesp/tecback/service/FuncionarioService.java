@@ -38,6 +38,22 @@ public class FuncionarioService {
         return repository.findById(id);
     }
 
+    public List<Funcionario> findByNome(String nome){
+        return repository.findByNome(nome);
+    }
+
+    public List<Funcionario> findByFirstNome(String nome){
+        return repository.findByFirstNome(nome);
+    }
+
+    public List<Funcionario> findByFuncao(String funcao){
+        return repository.findByFuncao(funcao);
+    }
+
+    public List<Funcionario> findByCpf(String cpf){
+        return repository.findByCpf(cpf);
+    }
+
     public void delete(Funcionario funcionario){
         if(funcionario.getId() == null){
             throw new RuntimeException("Objeto inexistente.");

@@ -43,9 +43,15 @@ public class ProdutoResource {
         return service.findById(id);
     }
 
+    @GetMapping("/nome/{nome}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Produto> findByNome(@PathVariable String nome){
+        return service.findByNome(nome);
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
+    public void deleteById(@PathVariable Long id) {
         service.deleteById(id);
     }
 

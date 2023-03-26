@@ -43,9 +43,33 @@ public class FuncionarioResource {
         return service.findById(id);
     }
 
+    @GetMapping("/nome/{nome}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Funcionario> findByNome(@PathVariable String nome){
+        return service.findByNome(nome);
+    }
+
+    @GetMapping("/primeiroNome/{nome}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Funcionario> findByFirstNome(@PathVariable String nome){
+        return service.findByFirstNome(nome);
+    }
+
+    @GetMapping("/funcao/{funcao}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Funcionario> findByFuncao(@PathVariable String funcao){
+        return service.findByFuncao(funcao);
+    }
+
+    @GetMapping("/cpf/{cpf}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Funcionario> findByCpf(@PathVariable String cpf){
+        return service.findByCpf(cpf);
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable Long id) {
+    public void deleteById(@PathVariable Long id) {
         service.deleteById(id);
     }
 
