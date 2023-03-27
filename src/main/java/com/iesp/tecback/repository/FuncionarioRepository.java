@@ -1,5 +1,6 @@
 package com.iesp.tecback.repository;
 
+import com.iesp.tecback.entity.Cliente;
 import com.iesp.tecback.entity.Funcionario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,8 +12,13 @@ import java.util.List;
 @Repository
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
 
-    List<Funcionario> findByNomeContainingIgnoreCase(String nome);
+    @Query(value = "SELECT * FROM funcionario WHERE nome LIKE %?1%", nativeQuery = true)
+    List<Funcionario> findByNomeContaining(String nome);
 
     List<Funcionario> findByFuncaoContainingIgnoreCase(String funcao);
-    List<Funcionario> findByCpf(String cpf);
+    List<Funcionario> findByCpfContaining(String cpf);
+    @Query("SELECT f FROM Funcionario f WHERE f.data LIKE %:data%")
+    List<Funcionario> findByDataContaining(String data);
+
+
 }

@@ -55,6 +55,12 @@ public class ClienteResource {
 		return service.findByCpf(cpf);
 	}
 
+	@GetMapping("/data/{data}")
+	@ResponseStatus(HttpStatus.OK)
+	public List<Cliente> findByDataNascimento(@PathVariable String data){
+		return service.findByDataNascimento(data);
+	}
+
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void deleteById(@PathVariable Long id) {

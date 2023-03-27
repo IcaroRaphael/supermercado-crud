@@ -61,6 +61,12 @@ public class FuncionarioResource {
         return service.findByCpf(cpf);
     }
 
+    @GetMapping("/data/{data}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Funcionario> findByData(@PathVariable String data){
+        return service.findByData(data);
+    }
+
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteById(@PathVariable Long id) {

@@ -29,6 +29,9 @@ public class Funcionario implements Serializable {
     @NotNull(message = "Campo telefone não pode ser nulo.")
     private String telefone;
 
+    @NotNull(message = "Campo telefone não pode ser nulo.")
+    private String data;
+
     @NotNull(message = "Campo salario não pode ser nulo.")
     private Double salario;
 

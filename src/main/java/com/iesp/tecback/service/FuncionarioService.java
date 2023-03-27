@@ -39,7 +39,7 @@ public class FuncionarioService {
     }
 
     public List<Funcionario> findByNome(String nome){
-        return repository.findByNomeContainingIgnoreCase(nome);
+        return repository.findByNomeContaining(nome);
     }
 
     public List<Funcionario> findByFuncao(String funcao){
@@ -47,9 +47,11 @@ public class FuncionarioService {
     }
 
     public List<Funcionario> findByCpf(String cpf){
-        return repository.findByCpf(cpf);
+        return repository.findByCpfContaining(cpf);
     }
-
+    public List<Funcionario> findByData(String data){
+        return repository.findByDataContaining(data);
+    }
     public void delete(Funcionario funcionario){
         if(funcionario.getId() == null){
             throw new RuntimeException("Objeto inexistente.");

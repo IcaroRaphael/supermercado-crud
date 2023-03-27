@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Tecback-2" />
         <module name="Tecback-3" />
+        <module name="supermercado-crud" />
         <module name="Tecback-2-main" />
       </profile>
     </annotationProcessing>
@@ -18,6 +19,7 @@
       <module name="Tecback-2" options="-parameters" />
       <module name="Tecback-2-main" options="-parameters" />
       <module name="Tecback-3" options="-parameters" />
+      <module name="supermercado-crud" options="-parameters" />
     </option>
   </component>
 </project>

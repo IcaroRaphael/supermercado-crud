@@ -1,14 +1,14 @@
-insert into cliente(id, nome, cpf) values (1,'Pedro da Silveira', '201.176.231-99');
-insert into cliente(id, nome, cpf) values (2,'Vinicius Cruz', '202.276.231-99');
-insert into cliente(id, nome, cpf) values (3,'Icaro Raphael', '203.376.231-99');
-insert into cliente(id, nome, cpf) values (4,'Vinicius Cruz', '204.476.231-99');
-insert into cliente(id, nome, cpf) values (5,'João Raphael', '205.576.231-99');
+insert into cliente(id, nome, cpf, data) values (1,'Pedro da Silveira', '201.176.231-99', '24-11-1999');
+insert into cliente(id, nome, cpf, data) values (2,'Vinicius Cruz', '202.276.231-99', '25-09-1990');
+insert into cliente(id, nome, cpf, data) values (3,'Icaro Raphael', '203.376.231-99', '26-06-2000');
+insert into cliente(id, nome, cpf, data) values (4,'Vinicius Cruz', '204.476.231-99', '17-07-1988');
+insert into cliente(id, nome, cpf, data) values (5,'João Raphael', '205.576.231-99', '12-03-1997');
 
-insert into funcionario(id, nome, telefone, salario, funcao, cpf) values (1, 'João da Silveira', '952147895', 1500, 'Caixa','211.176.231-99');
-insert into funcionario(id, nome, telefone, salario, funcao, cpf) values (2, 'Gabriel Santana', '942147895', 2500, 'Secretário','221.176.231-99');
-insert into funcionario(id, nome, telefone, salario, funcao, cpf) values (3, 'Luiz Arruda', '932147895', 1500, 'Caixa','231.176.231-99');
-insert into funcionario(id, nome, telefone, salario, funcao, cpf) values (4, 'Lucas Cruz', '922147895', 3500, 'Contador','241.176.231-99');
-insert into funcionario(id, nome, telefone, salario, funcao, cpf) values (5, 'Iremar Nascimento', '912147895', 5000, 'Gerente','251.176.231-99');
+insert into funcionario(id, nome, telefone, salario, funcao, cpf, data) values (1, 'João da Silveira', '952147895', 1500, 'Caixa','211.176.231-99', '27-06-1996');
+insert into funcionario(id, nome, telefone, salario, funcao, cpf, data) values (2, 'Gabriel Santana', '942147895', 2500, 'Secretário','221.176.231-99', '21-10-1998');
+insert into funcionario(id, nome, telefone, salario, funcao, cpf, data) values (3, 'Luiz Arruda', '932147895', 1500, 'Caixa','231.176.231-99', '10-03-2001');
+insert into funcionario(id, nome, telefone, salario, funcao, cpf, data) values (4, 'Lucas Cruz', '922147895', 3500, 'Contador','241.176.231-99', '25-11-2004');
+insert into funcionario(id, nome, telefone, salario, funcao, cpf, data) values (5, 'Iremar Nascimento', '912147895', 5000, 'Gerente','251.176.231-99', '07-08-1999');
 
 insert into produto(id, nome, descricao, preco_custo, preco_venda, quantidade_estoque) values (1, 'Arroz', 'Arroz da marca São José', '4.5', '6.5', 105);
 insert into produto(id, nome, descricao, preco_custo, preco_venda, quantidade_estoque) values (2, 'Feijão', 'Feijão da marca São José', '6.5', '7.5', 96);

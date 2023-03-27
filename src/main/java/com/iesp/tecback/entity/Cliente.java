@@ -25,6 +25,8 @@ public class Cliente implements Serializable {
     @NotEmpty(message = "Campo nome não pode ser vazio.")
     private String nome;
 
+    @NotEmpty(message = "Não pode ser vazio")
+    private String data;
     @CPF(message = "CPF inválido.")
     private String cpf;
 }

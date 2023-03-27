@@ -39,11 +39,15 @@ public class ClienteService {
     }
 
     public List<Cliente> findByNome(String nome){
-        return repository.findByNomeContainingIgnoreCase(nome);
+        return repository.findByNomeContaining(nome);
     }
 
     public List<Cliente> findByCpf(String cpf){
-        return repository.findByCpf(cpf);
+        return repository.findByCpfContaining(cpf);
+    }
+
+    public List<Cliente> findByDataNascimento(String dataNascimento){
+        return repository.findByDataContaining(dataNascimento);
     }
 
     public void delete(Cliente cliente){
