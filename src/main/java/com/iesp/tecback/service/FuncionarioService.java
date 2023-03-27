@@ -39,15 +39,11 @@ public class FuncionarioService {
     }
 
     public List<Funcionario> findByNome(String nome){
-        return repository.findByNome(nome);
-    }
-
-    public List<Funcionario> findByFirstNome(String nome){
-        return repository.findByFirstNome(nome);
+        return repository.findByNomeContainingIgnoreCase(nome);
     }
 
     public List<Funcionario> findByFuncao(String funcao){
-        return repository.findByFuncao(funcao);
+        return repository.findByFuncaoContainingIgnoreCase(funcao);
     }
 
     public List<Funcionario> findByCpf(String cpf){

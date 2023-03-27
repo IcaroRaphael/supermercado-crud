@@ -49,12 +49,6 @@ public class ClienteResource {
 		return service.findByNome(nome);
 	}
 
-	@GetMapping("/primeiroNome/{nome}")
-	@ResponseStatus(HttpStatus.OK)
-	public List<Cliente> findByFirstNome(@PathVariable String nome){
-		return service.findByFirstNome(nome);
-	}
-
 	@GetMapping("/cpf/{cpf}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Cliente> findByCpf(@PathVariable String cpf){
@@ -72,26 +66,5 @@ public class ClienteResource {
 	public void delete(@RequestBody Cliente c) {
 		service.delete(c);
 	}
-
-	//----------------------------------------------------------------------
-	/*@GetMapping("/search/{nome}")
-	public List<Cliente> buscaPorNome(@PathVariable String nome){
-	    return repository.findByNomeContainingIgnoreCase(nome);
-	}
-	
-	@GetMapping("/rua/{nome}")
-	public List<Cliente> buscaPorRua(@PathVariable String nome){
-		return repository.findByNomeRuaContaining(nome);
-	}
-
-	@GetMapping("/lista/{cpf}")
-    public List<Cliente> buscarClientesPorCpf(@PathVariable String cpf) {
-        return repository.findByCpf(cpf);
-    }
-	
-	@GetMapping("/listatelefone/{clienteTelefone}")
-    public List<Cliente> buscarClientesPorTelefone(@PathVariable String clienteTelefone) {
-        return repository.findByTelefone(clienteTelefone);
-    }*/
 
 }

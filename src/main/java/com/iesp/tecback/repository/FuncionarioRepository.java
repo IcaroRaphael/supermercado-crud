@@ -11,10 +11,8 @@ import java.util.List;
 @Repository
 public interface FuncionarioRepository extends JpaRepository<Funcionario, Long> {
 
-    List<Funcionario> findByNome(String nome);
+    List<Funcionario> findByNomeContainingIgnoreCase(String nome);
 
-    @Query("SELECT f FROM Funcionario f WHERE SUBSTRING_INDEX(f.nome, ' ', 1) LIKE %:primeiroNome%")
-    List<Funcionario> findByFirstNome(@Param("primeiroNome") String primeiroNome);
-    List<Funcionario> findByFuncao(String funcao);
+    List<Funcionario> findByFuncaoContainingIgnoreCase(String funcao);
     List<Funcionario> findByCpf(String cpf);
 }

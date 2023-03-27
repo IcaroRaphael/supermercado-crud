@@ -39,11 +39,7 @@ public class ClienteService {
     }
 
     public List<Cliente> findByNome(String nome){
-        return repository.findByNome(nome);
-    }
-
-    public List<Cliente> findByFirstNome(String nome){
-        return repository.findByFirstNome(nome);
+        return repository.findByNomeContainingIgnoreCase(nome);
     }
 
     public List<Cliente> findByCpf(String cpf){

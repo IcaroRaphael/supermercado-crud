@@ -2,7 +2,7 @@ insert into cliente(id, nome, cpf) values (1,'Pedro da Silveira', '201.176.231-9
 insert into cliente(id, nome, cpf) values (2,'Vinicius Cruz', '202.276.231-99');
 insert into cliente(id, nome, cpf) values (3,'Icaro Raphael', '203.376.231-99');
 insert into cliente(id, nome, cpf) values (4,'Vinicius Cruz', '204.476.231-99');
-insert into cliente(id, nome, cpf) values (5,'João Rafael', '205.576.231-99');
+insert into cliente(id, nome, cpf) values (5,'João Raphael', '205.576.231-99');
 
 insert into funcionario(id, nome, telefone, salario, funcao, cpf) values (1, 'João da Silveira', '952147895', 1500, 'Caixa','211.176.231-99');
 insert into funcionario(id, nome, telefone, salario, funcao, cpf) values (2, 'Gabriel Santana', '942147895', 2500, 'Secretário','221.176.231-99');

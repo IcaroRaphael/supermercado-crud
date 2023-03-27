@@ -49,12 +49,6 @@ public class FuncionarioResource {
         return service.findByNome(nome);
     }
 
-    @GetMapping("/primeiroNome/{nome}")
-    @ResponseStatus(HttpStatus.OK)
-    public List<Funcionario> findByFirstNome(@PathVariable String nome){
-        return service.findByFirstNome(nome);
-    }
-
     @GetMapping("/funcao/{funcao}")
     @ResponseStatus(HttpStatus.OK)
     public List<Funcionario> findByFuncao(@PathVariable String funcao){

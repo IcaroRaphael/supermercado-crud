@@ -39,7 +39,7 @@ public class ProdutoService {
     }
 
     public List<Produto> findByNome(String nome){
-        return repository.findByNome(nome);
+        return repository.findByNomeContainingIgnoreCase(nome);
     }
 
     public void delete(Produto produto){
