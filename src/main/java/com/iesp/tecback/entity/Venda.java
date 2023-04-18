@@ -1,11 +1,11 @@
 package com.iesp.tecback.entity;
 
 import com.iesp.tecback.enums.FormaPagamento;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
