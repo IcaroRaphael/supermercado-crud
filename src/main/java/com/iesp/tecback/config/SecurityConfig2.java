@@ -25,10 +25,6 @@ public class SecurityConfig2 {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .logout(logout -> logout
-                        .logoutUrl("/basic/basiclogout")
-                        .addLogoutHandler(new SecurityContextLogoutHandler())
-                )
                 .csrf().disable();
 
         return http.build();
