@@ -1,4 +1,4 @@
-package com.iesp.tecback.enuns;
+package com.iesp.tecback.enums;
 
 public enum RoleName {
 
