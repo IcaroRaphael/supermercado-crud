@@ -1,6 +1,6 @@
 package com.iesp.tecback.authentication;
 
-import com.iesp.tecback.enuns.RoleName;
+import com.iesp.tecback.enums.RoleName;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

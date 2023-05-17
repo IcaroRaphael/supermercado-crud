@@ -6,11 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Locale;
 
 @SpringBootApplication
-public class TecbackApplication {
+public class SupermercadoApplication {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
-		SpringApplication.run(TecbackApplication.class, args);
+		SpringApplication.run(SupermercadoApplication.class, args);
 	}
 
 }

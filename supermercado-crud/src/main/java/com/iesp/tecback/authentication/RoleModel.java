@@ -1,6 +1,6 @@
 package com.iesp.tecback.authentication;
 
-import com.iesp.tecback.enuns.RoleName;
+import com.iesp.tecback.enums.RoleName;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
