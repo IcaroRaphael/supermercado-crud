@@ -30,7 +30,7 @@ public class Funcionario implements Serializable {
 
     @NotNull
     @Column(name = "data_nascimento")
-    private Date dataNascimento;
+    private String dataNascimento;
 
     @CPF
     private String cpf;
