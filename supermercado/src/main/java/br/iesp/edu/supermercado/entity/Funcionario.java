@@ -19,7 +19,7 @@ import java.util.Date;
 public class Funcionario implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotEmpty
@@ -32,7 +32,6 @@ public class Funcionario implements Serializable {
     @Column(name = "data_nascimento")
     private String dataNascimento;
 
-    @CPF
     private String cpf;
 
     @OneToOne

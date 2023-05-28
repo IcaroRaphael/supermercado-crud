@@ -19,7 +19,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column
     @NotEmpty(message = "Campo Login é obrigatório.")
@@ -30,6 +30,6 @@ public class Usuario {
     
     @Column
     @JsonIgnore
-    private boolean administrador;
+    private boolean administrador = true;
 
 }

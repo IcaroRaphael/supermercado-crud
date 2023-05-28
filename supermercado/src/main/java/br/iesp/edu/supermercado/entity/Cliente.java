@@ -3,13 +3,11 @@ package br.iesp.edu.supermercado.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.br.CPF;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.Date;
 
 @Data
 @AllArgsConstructor
@@ -19,7 +17,7 @@ import java.util.Date;
 public class Cliente implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @NotEmpty
@@ -27,9 +25,8 @@ public class Cliente implements Serializable {
 
     @NotNull
     @Column(name = "data_nascimento")
-    private Date dataNascimento;
+    private String dataNascimento;
 
-    @CPF
     @NotEmpty
     private String cpf;
 }
