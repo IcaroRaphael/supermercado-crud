@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,7 +27,9 @@ public class Usuario {
     @Column
     @NotEmpty(message = "Campo Senha é obrigatório.")
     private String senha;
+    
     @Column
+    @JsonIgnore
     private boolean administrador;
 
 }
